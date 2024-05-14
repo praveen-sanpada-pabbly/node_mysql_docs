@@ -1,0 +1,43 @@
+
+npm install http-proxy-middleware
+
+
+--------------------------------------------
+
+
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const proxyOptions = {
+  target: 'http://198.09.234.1',
+  changeOrigin: true, // Changes the origin of the host header to the target URL
+  pathRewrite: {
+    '^/api': '/api' // Rewrites '/api' to '/api' in the URL path (if needed)
+  }
+};
+
+const apiProxy = createProxyMiddleware(proxyOptions);
+
+module.exports = apiProxy;
+
+
+--------------------------------------------
+
+
+const express = require('express');
+const apiProxy = require('./proxy');
+
+const app = express();
+
+// Use the proxy middleware for the '/api' path
+app.use('/api', apiProxy);
+
+// Your other application routes and middleware can go here
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+
+--------------------------------------------
+

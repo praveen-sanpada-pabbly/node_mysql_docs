@@ -1,0 +1,45 @@
+const mysql = require('mysql');
+
+// Create connections for database1 and database2
+const connection1 = mysql.createConnection({
+  host: 'database1_host',
+  user: 'database1_user',
+  password: 'database1_password',
+  database: 'database1_name'
+});
+
+const connection2 = mysql.createConnection({
+  host: 'database2_host',
+  user: 'database2_user',
+  password: 'database2_password',
+  database: 'database2_name'
+});
+
+// Connect to database1
+connection1.connect((err) => {
+  if (err) throw err;
+  console.log('Connected to database1!');
+});
+
+// Connect to database2
+connection2.connect((err) => {
+  if (err) throw err;
+  console.log('Connected to database2!');
+});
+
+// Perform queries or operations on the databases as needed
+// For example, querying data from database1
+connection1.query('SELECT * FROM table1', (err, results) => {
+  if (err) throw err;
+  console.log('Data from database1:', results);
+});
+
+// Querying data from database2
+connection2.query('SELECT * FROM table2', (err, results) => {
+  if (err) throw err;
+  console.log('Data from database2:', results);
+});
+
+// Close connections when done
+connection1.end();
+connection2.end();

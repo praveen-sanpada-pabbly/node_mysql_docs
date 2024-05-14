@@ -1,0 +1,92 @@
+project-root/
+│
+├── src/
+│   ├── entities/
+│   │   └── User.js
+│   ├── useCases/
+│   │   ├── CreateUserUseCase.js
+│   │   └── GetUserByIdUseCase.js
+│   ├── interfaces/
+│   │   ├── UserRepositoryInterface.js
+│   │   └── UserControllerInterface.js
+│   ├── controllers/
+│   │   └── HttpUserController.js
+│   └── infrastructure/
+│       ├── UserRepository.js
+│       └── Database.js
+│
+├── tests/
+│   ├── useCases/
+│   │   ├── CreateUserUseCase.test.js
+│   │   └── GetUserByIdUseCase.test.js
+│   ├── controllers/
+│   │   └── HttpUserController.test.js
+│   └── infrastructure/
+│       └── UserRepository.test.js
+│
+├── app.js
+└── package.json
+
+
+
+
+project-root/
+│
+├── config/
+│   ├── database.js           // Database configuration
+│   ├── logger.js             // Logging configuration
+│   ├── middleware.js         // Express middleware configuration
+│   ├── passport.js           // Passport.js configuration (if using for authentication)
+│   └── ...
+│
+├── controllers/
+│   ├── authController.js     // Authentication-related controllers
+│   ├── userController.js     // User-related controllers
+│   ├── productController.js  // Product-related controllers
+│   ├── orderController.js    // Order-related controllers
+│   └── ...
+│
+├── models/
+│   ├── User.js               // User model
+│   ├── Product.js            // Product model
+│   ├── Order.js              // Order model
+│   ├── Review.js             // Review model
+│   └── ...
+│
+├── routes/
+│   ├── authRoutes.js         // Authentication routes
+│   ├── userRoutes.js         // User routes
+│   ├── productRoutes.js      // Product routes
+│   ├── orderRoutes.js        // Order routes
+│   └── ...
+│
+├── services/
+│   ├── authService.js        // Authentication service
+│   ├── userService.js        // User service
+│   ├── productService.js     // Product service
+│   ├── orderService.js       // Order service
+│   └── ...
+│
+├── utils/
+│   ├── validators.js         // Input validation functions
+│   ├── helpers.js            // Helper functions
+│   ├── constants.js          // Constant values
+│   └── ...
+│
+├── public/                   // Public files (e.g., client-side assets)
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── ...
+│
+├── tests/
+│   ├── controllers/          // Controller unit tests
+│   ├── models/               // Model unit tests
+│   ├── services/             // Service unit tests
+│   ├── routes/               // Route integration tests
+│   └── ...
+│
+├── app.js                    // Main application file
+├── package.json              // Node.js package configuration
+├── README.md                 // Project documentation
+└── ...

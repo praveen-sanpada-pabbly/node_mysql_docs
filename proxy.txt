@@ -1,0 +1,39 @@
+<?php
+$servername = "109.98.09.3";
+$username = "your_username";
+$password = "your_password";
+$database = "your_database";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+
+
+
+const mysql = require('mysql');
+
+// Create a connection to the MySQL database
+const connection = mysql.createConnection({
+  host: '109.98.09.3',
+  user: 'your_username',
+  password: 'your_password',
+  database: 'your_database'
+});
+
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL database: ', err);
+    return;
+  }
+  console.log('Connected to MySQL database');
+});
+
+// Close the connection when done
+connection.end();
